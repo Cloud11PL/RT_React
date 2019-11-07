@@ -1,0 +1,15 @@
+@import "variables.scss";
+@import "typography.scss";
+@import "loading.scss";
+
+main {
+  padding: 1rem;
+  background-color: $light-blue; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pag_active {
+  background-color: $active-color !important;
+}
