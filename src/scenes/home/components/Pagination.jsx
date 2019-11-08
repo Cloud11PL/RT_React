@@ -1,6 +1,8 @@
 import React from 'react';
 // import prop-types from 'prop-types'
-import './Pagination.scss';
+import './pagination.scss';
+import propTypes from 'prop-types';
+
 
 export default function Pagination({ pageInfo, currentPage, setCurrentPage }) {
   const renderPages = () => {
@@ -8,7 +10,7 @@ export default function Pagination({ pageInfo, currentPage, setCurrentPage }) {
     const buttons = [];
     const isActive = (index) => (index === currentPage ? 'pag_active' : '');
 
-    for (let i = 1; i <= lastIndex; i++) {
+    for (let i = 1; i <= lastIndex; i += 1) {
       buttons.push(<button type="button" onClick={() => setCurrentPage(i)} key={i} className={`${isActive(i)} pagination-link`}>{i}</button>);
     }
     return buttons;
@@ -22,3 +24,13 @@ export default function Pagination({ pageInfo, currentPage, setCurrentPage }) {
     </div>
   );
 }
+
+Pagination.propTypes = {
+  pageInfo: propTypes.shape({
+    count: propTypes.number,
+    previous: propTypes.string,
+    next: propTypes.string,
+  }).isRequired,
+  currentPage: propTypes.number.isRequired,
+  setCurrentPage: propTypes.func.isRequired,
+};

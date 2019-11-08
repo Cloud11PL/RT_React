@@ -1,5 +1,6 @@
 import React from 'react';
-import './Character.scss';
+import propTypes from 'prop-types';
+import './character.scss';
 
 export default function Character({ singleCharacter }) {
   const sOrNoS = (len) => (len > 1 ? 's' : '');
@@ -41,3 +42,16 @@ export default function Character({ singleCharacter }) {
     </div>
   );
 }
+
+Character.propTypes = {
+  singleCharacter: propTypes.shape({
+    name: propTypes.string,
+    birth_year: propTypes.string,
+    height: propTypes.string,
+    mass: propTypes.string,
+    films: propTypes.array,
+    hair_color: propTypes.string,
+    vehicles: propTypes.array,
+    starships: propTypes.array,
+  }).isRequired,
+};

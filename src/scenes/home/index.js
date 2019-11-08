@@ -3,7 +3,7 @@ import axios from 'axios';
 import NavBar from '../components/NavBar';
 import Character from './components/Character';
 import Pagination from './components/Pagination';
-import './Characters.scss'; 
+import './characters.scss';
 import Spinner from './components/Spinner';
 
 export default function HomePage() {
