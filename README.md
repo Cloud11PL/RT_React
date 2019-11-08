@@ -1,1 +1,1 @@
-Recruitment taks made with React.
+Recruitment task made with React.
